@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { BiSearchAlt } from 'react-icons/bi';
-import { BsCalendarEvent, BsMedical, BsActivity } from 'react-icons/bs';
+import { BsCalendarEvent, BsActivity } from 'react-icons/bs';
+import { FaMedkit } from 'react-icons/fa';
 
 interface SearchResult {
   id: string;
@@ -100,7 +101,7 @@ const Search: React.FC = () => {
       case 'appointment':
         return <BsCalendarEvent className="text-blue-500" />;
       case 'health':
-        return <BsMedical className="text-red-500" />;
+        return <FaMedkit className="text-red-500" />;
       default:
         return <BsCalendarEvent className="text-gray-500" />;
     }
@@ -108,7 +109,7 @@ const Search: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar title="Search" showSearch={false} />
+      <Navbar title="Search" />
       
       <div className="p-4">
         <form onSubmit={handleSearch}>

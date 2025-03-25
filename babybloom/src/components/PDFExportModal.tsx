@@ -125,8 +125,8 @@ const PDFExportModal: React.FC<PDFExportModalProps> = ({
   });
   
   const [loading, setLoading] = useState(false);
-  // Both success and setSuccess are used in various handlers
-  const [success, setSuccess] = useState(false);
+  // Remove the unused variable but keep setSuccess since it might be used
+  const [, setSuccess] = useState(false);
   const [activeStep, setActiveStep] = useState<'options' | 'preview' | 'success'>('options');
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [showEmailPreview, setShowEmailPreview] = useState(false);

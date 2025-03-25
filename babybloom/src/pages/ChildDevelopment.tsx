@@ -13,7 +13,7 @@ interface ActivitySuggestion {
 
 const ChildDevelopment: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [childName, setChildName] = useState('');
+  const [_childName, setChildName] = useState('');
   const [childAge, setChildAge] = useState(10); // Age in months
   const [activeCategory, setActiveCategory] = useState<'physical' | 'cognitive' | 'social'>('physical');
   
