@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FiSend, FiSettings } from 'react-icons/fi';
-import { BsChatLeftText, BsGoogle, BsLightbulb, BsStars } from 'react-icons/bs';
+import { FiSend, FiSettings, FiHeart, FiStar, FiMessageCircle } from 'react-icons/fi';
+import { BsChatLeftText, BsGoogle, BsStars, BsCloudSun } from 'react-icons/bs';
 import { SiOpenai } from 'react-icons/si';
-import { RiRobot2Line } from 'react-icons/ri';
+import { RiRobot2Line, RiBearSmileLine, RiMagicLine } from 'react-icons/ri';
 
 interface Message {
   id: string;
@@ -315,26 +315,20 @@ const AIAssistant: React.FC = () => {
     return savedKeys[providerId as keyof typeof savedKeys]?.length > 0;
   };
 
-  // Format timestamp
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  };
-
-  // Render the message bubble with appropriate styling
-  const renderMessage = (message: Message) => {
+  const renderMessageBubble = (message: Message) => {
     if (message.isLoading) {
       return (
         <div className="flex justify-start mb-4">
-          <div className="bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-3 max-w-[80%] shadow-soft">
+          <div className="bg-white dark:bg-gray-700 rounded-2xl px-4 py-3 max-w-[80%] shadow-soft border border-gray-100 dark:border-gray-600">
             <div className="flex items-center">
-              <div className="mr-3 h-8 w-8 rounded-full gradient-blue flex items-center justify-center animate-pulse">
-                <RiRobot2Line className="text-white" />
+              <div className="mr-3 h-8 w-8 rounded-full bg-gradient-to-r from-lavender to-babypink flex items-center justify-center animate-pulse">
+                <RiBearSmileLine className="text-white" />
               </div>
               <div>
                 <div className="flex space-x-1">
-                  <div className="h-2 w-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                  <div className="h-2 w-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '200ms' }}></div>
-                  <div className="h-2 w-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '400ms' }}></div>
+                  <div className="h-2 w-2 bg-lavender rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                  <div className="h-2 w-2 bg-lavender rounded-full animate-bounce" style={{ animationDelay: '200ms' }}></div>
+                  <div className="h-2 w-2 bg-lavender rounded-full animate-bounce" style={{ animationDelay: '400ms' }}></div>
                 </div>
                 <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 block">Thinking...</span>
               </div>
@@ -347,10 +341,10 @@ const AIAssistant: React.FC = () => {
     if (message.sender === 'user') {
       return (
         <div className="flex justify-end mb-4">
-          <div className="bg-primary text-white rounded-lg px-4 py-3 max-w-[80%] shadow-elevated">
+          <div className="bg-gradient-to-r from-lavender to-babypink text-white rounded-2xl px-4 py-3 max-w-[80%] shadow-soft">
             <p className="leading-relaxed">{message.text}</p>
             <div className="text-xs text-right mt-2 opacity-70 flex items-center justify-end">
-              <span>{formatTime(message.timestamp)}</span>
+              <span>{message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
             </div>
           </div>
         </div>
@@ -358,10 +352,10 @@ const AIAssistant: React.FC = () => {
     } else {
       return (
         <div className="flex justify-start mb-4">
-          <div className="bg-white dark:bg-gray-700 rounded-lg px-4 py-3 max-w-[80%] shadow-soft border border-gray-100 dark:border-gray-600">
+          <div className="bg-white dark:bg-gray-700 rounded-2xl px-4 py-3 max-w-[80%] shadow-soft border border-gray-100 dark:border-gray-600">
             <div className="flex items-center mb-2">
-              <div className="mr-2 h-6 w-6 rounded-full gradient-blue flex items-center justify-center">
-                <RiRobot2Line className="text-white text-xs" />
+              <div className="mr-2 h-6 w-6 rounded-full bg-gradient-to-r from-lavender to-babypink flex items-center justify-center">
+                <RiBearSmileLine className="text-white text-xs" />
               </div>
               <span className="text-xs font-medium text-gray-600 dark:text-gray-300">
                 {message.aiModel === 'openai' 
@@ -383,7 +377,7 @@ const AIAssistant: React.FC = () => {
                 )}
               </div>
               <div className="text-xs text-gray-500 dark:text-gray-400">
-                {formatTime(message.timestamp)}
+                {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </div>
             </div>
           </div>
@@ -393,84 +387,103 @@ const AIAssistant: React.FC = () => {
   };
 
   return (
-    <div className="h-full flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 animate-gradient-x">
-      {/* Header */}
-      <div className="text-center pt-6 pb-4">
-        <div className="w-16 h-16 gradient-blue rounded-full flex items-center justify-center mx-auto mb-2 shadow-glow">
-          <RiRobot2Line className="text-white text-2xl" />
+    <div className="h-full flex flex-col bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 animate-gradient-x">
+      {/* Header with cute animation */}
+      <div className="text-center pt-6 pb-4 relative">
+        <div className="absolute top-2 left-2 w-8 h-8 bg-pink-100 dark:bg-pink-900 rounded-full opacity-30 animate-float" style={{ animationDelay: '0.2s' }}></div>
+        <div className="absolute top-10 right-10 w-5 h-5 bg-yellow-100 dark:bg-yellow-800 rounded-full opacity-30 animate-float" style={{ animationDelay: '0.9s' }}></div>
+        <div className="absolute bottom-2 left-1/4 w-6 h-6 bg-blue-100 dark:bg-blue-900 rounded-full opacity-30 animate-float" style={{ animationDelay: '0.5s' }}></div>
+        
+        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-lavender via-lavender-light to-babypink transform rotate-12 flex items-center justify-center mx-auto mb-2 shadow-glow relative overflow-hidden group transition-all duration-300 hover:rotate-0">
+          <div className="absolute inset-0 bg-white opacity-20 group-hover:opacity-10 transition-opacity"></div>
+          <RiBearSmileLine className="text-white text-3xl transform -rotate-12 group-hover:rotate-0 transition-all duration-300 group-hover:scale-110" />
         </div>
-        <h1 className="text-2xl font-display font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">AI Assistant</h1>
-        <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">Get expert advice on your baby's development</p>
+        <h1 className="text-2xl font-display font-bold bg-gradient-to-r from-lavender to-babypink-light bg-clip-text text-transparent mt-3">Baby Bloom AI Assistant</h1>
+        <p className="text-gray-600 dark:text-gray-300 text-sm mt-1 max-w-xs mx-auto">Your friendly AI guide to baby development and parenting tips</p>
       </div>
 
-      {/* Tab navigation */}
+      {/* Tab navigation - Softer, rounder tabs */}
       <div className="flex justify-center px-4 mb-4">
-        <div className="flex gap-4 bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-elevated">
+        <div className="flex gap-3 bg-white dark:bg-gray-800 p-2 rounded-3xl shadow-elevated border border-gray-100 dark:border-gray-700">
           <button 
-            className={`flex items-center px-6 py-3 transition-all rounded-xl font-medium min-w-[110px] ${
+            className={`flex items-center px-4 py-2.5 transition-all rounded-2xl font-medium text-sm ${
               activeTab === 'chat' 
-                ? 'text-white gradient-blue shadow-soft' 
-                : 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary'
+                ? 'text-white bg-gradient-to-r from-lavender to-babypink shadow-soft' 
+                : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-lavender'
             }`}
             onClick={() => setActiveTab('chat')}
           >
-            <BsChatLeftText className={`${activeTab === 'chat' ? 'text-white' : 'text-primary'} mr-2`} />
+            <FiMessageCircle className={`${activeTab === 'chat' ? 'text-white' : 'text-lavender'} mr-2`} />
             <span>Chat</span>
           </button>
           <button 
-            className={`flex items-center px-6 py-3 transition-all rounded-xl font-medium min-w-[110px] ${
+            className={`flex items-center px-4 py-2.5 transition-all rounded-2xl font-medium text-sm ${
               activeTab === 'suggestions' 
-                ? 'text-white gradient-purple shadow-soft' 
-                : 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary'
+                ? 'text-white bg-gradient-to-r from-cyan-400 to-blue-500 shadow-soft' 
+                : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-blue-500'
             }`}
             onClick={() => setActiveTab('suggestions')}
           >
-            <BsLightbulb className={`${activeTab === 'suggestions' ? 'text-white' : 'text-primary'} mr-2`} />
-            <span>Suggestions</span>
+            <RiMagicLine className={`${activeTab === 'suggestions' ? 'text-white' : 'text-blue-500'} mr-2`} />
+            <span>Ideas</span>
           </button>
           <button 
-            className={`flex items-center px-6 py-3 transition-all rounded-xl font-medium min-w-[110px] ${
+            className={`flex items-center px-4 py-2.5 transition-all rounded-2xl font-medium text-sm ${
               activeTab === 'settings' 
-                ? 'text-white gradient-mint shadow-soft' 
-                : 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary'
+                ? 'text-white bg-gradient-to-r from-amber-400 to-orange-400 shadow-soft' 
+                : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-amber-500'
             }`}
             onClick={() => setActiveTab('settings')}
           >
-            <FiSettings className={`${activeTab === 'settings' ? 'text-white' : 'text-primary'} mr-2`} />
+            <FiSettings className={`${activeTab === 'settings' ? 'text-white' : 'text-amber-500'} mr-2`} />
             <span>Settings</span>
           </button>
         </div>
       </div>
 
       {/* Main content */}
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 overflow-hidden px-3 relative">
+        {/* Decorative elements */}
+        <div className="absolute -top-6 -left-6 w-12 h-12 bg-gradient-to-br from-blue-200 to-blue-300 dark:from-blue-800 dark:to-blue-900 rounded-full opacity-20 blur-xl"></div>
+        <div className="absolute top-1/3 -right-5 w-10 h-10 bg-gradient-to-br from-pink-200 to-pink-300 dark:from-pink-800 dark:to-pink-900 rounded-full opacity-20 blur-xl"></div>
+
         {activeTab === 'chat' && (
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full relative">
             {/* Chat messages */}
-            <div className="flex-1 overflow-y-auto p-5 bg-white bg-opacity-50 dark:bg-dark-card dark:bg-opacity-30 rounded-lg mx-2 shadow-inner mb-2" style={{ minHeight: '65vh' }}>
-              <div className="space-y-4">
-                {messages.map(message => (
-                  <div key={message.id} className="animate-fade-in">
-                    {renderMessage(message)}
-                  </div>
-                ))}
-                <div ref={messagesEndRef} />
-              </div>
+            <div className="flex-1 overflow-y-auto p-5 bg-white bg-opacity-70 dark:bg-gray-800 dark:bg-opacity-50 backdrop-blur-sm rounded-3xl mb-3 shadow-inner" style={{ minHeight: '65vh' }}>
+              {messages.length > 0 ? (
+                <div className="space-y-4">
+                  {messages.map(message => (
+                    <div key={message.id} className="animate-fade-in">
+                      {renderMessageBubble(message)}
+                    </div>
+                  ))}
+                  <div ref={messagesEndRef} />
+                </div>
+              ) : (
+                <div className="h-full flex flex-col items-center justify-center text-center px-4 py-10 animate-fade-in">
+                  <RiBearSmileLine className="text-5xl text-lavender mb-4 animate-bounce" style={{ animationDuration: '2s' }} />
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-gray-200 mb-2">Welcome to Baby Bloom AI!</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md">
+                    I'm here to help with all your parenting questions. Ask me anything about your baby's development, feeding, sleep, and more!
+                  </p>
+                </div>
+              )}
             </div>
             
             {/* AI Provider Selection */}
-            <div className="px-5 py-3 mt-auto border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90 backdrop-blur-sm rounded-b-xl mx-2 shadow-soft">
+            <div className="px-5 py-4 mt-auto border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90 backdrop-blur-sm rounded-3xl shadow-soft">
               <div className="flex justify-start space-x-3 mb-3">
                 {aiProviders.map(provider => (
                   <button
                     key={provider.id}
                     onClick={() => setSelectedProvider(provider.id)}
                     disabled={!hasApiKey(provider.id)}
-                    className={`px-3 py-1.5 rounded-full flex items-center text-sm transition-all transform hover:-translate-y-1 active:translate-y-0
+                    className={`px-3 py-1.5 rounded-full flex items-center text-xs font-medium transition-all transform hover:-translate-y-1 active:translate-y-0
                       ${provider.id === selectedProvider 
                         ? provider.id === 'openai' 
-                          ? 'bg-gradient-to-r from-green-400 to-emerald-600 text-white shadow-glow' 
-                          : 'bg-gradient-to-r from-blue-400 to-indigo-600 text-white shadow-glow'
+                          ? 'bg-gradient-to-r from-green-400 to-emerald-600 text-white shadow-soft' 
+                          : 'bg-gradient-to-r from-blue-400 to-indigo-600 text-white shadow-soft'
                         : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'} 
                       ${!hasApiKey(provider.id) 
                         ? 'opacity-50 cursor-not-allowed hover:translate-y-0' 
@@ -483,23 +496,23 @@ const AIAssistant: React.FC = () => {
               </div>
               
               {/* Input area */}
-              <div className="flex items-center bg-white dark:bg-dark-card rounded-3xl border border-gray-200 dark:border-gray-600 shadow-elevated transition-shadow focus-within:shadow-glow focus-within:border-primary">
+              <div className="flex items-center bg-white dark:bg-dark-card rounded-2xl border border-gray-200 dark:border-gray-600 shadow-soft transition-shadow focus-within:shadow-glow focus-within:border-lavender">
                 <textarea
                   id="messageInput"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Ask a question about your baby's development..."
-                  className="flex-1 p-4 rounded-l-3xl outline-none resize-none bg-transparent dark:text-white font-rounded"
+                  placeholder="Ask me anything about your baby..."
+                  className="flex-1 p-4 rounded-l-2xl outline-none resize-none bg-transparent dark:text-white font-rounded"
                   rows={1}
                 />
                 <button
                   onClick={handleSendMessage}
                   disabled={isLoading || inputValue.trim() === ''}
-                  className={`p-4 rounded-r-3xl transition-all ${
+                  className={`p-4 rounded-r-2xl transition-all ${
                     isLoading || inputValue.trim() === '' 
                       ? 'text-gray-400 dark:text-gray-600' 
-                      : 'text-white bg-primary hover:bg-primary-light dark:hover:bg-primary-dark'
+                      : 'text-white bg-gradient-to-r from-lavender to-babypink hover:from-lavender-light hover:to-babypink-light'
                   }`}
                 >
                   <FiSend className={`transform transition-transform duration-300 ${
@@ -512,28 +525,26 @@ const AIAssistant: React.FC = () => {
         )}
 
         {activeTab === 'suggestions' && (
-          <div className="p-5 animate-fade-in-up overflow-y-auto">
-            <h2 className="text-xl font-display font-bold mb-5 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">Question Categories</h2>
-            
+          <div className="p-4 animate-fade-in-up overflow-y-auto bg-white bg-opacity-70 dark:bg-gray-800 dark:bg-opacity-50 backdrop-blur-sm rounded-3xl shadow-soft">
             {favoriteQuestions.length > 0 && (
               <div className="mb-6 animate-fade-in-up">
                 <h3 className="text-md font-display font-bold mb-3 flex items-center text-gray-700 dark:text-gray-200">
-                  <BsStars className="text-yellow-500 mr-2" /> Your Favorite Questions
+                  <FiHeart className="text-babypink mr-2" /> Your Favorite Questions
                 </h3>
                 <div className="space-y-2">
                   {favoriteQuestions.map((question, index) => (
                     <div key={`fav-${index}`} className="flex items-center">
                       <button
                         onClick={() => handleSuggestedQuestion(question)}
-                        className="flex-1 text-left p-3 bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-700 rounded-xl hover:shadow-elevated hover:-translate-y-1 active:translate-y-0 shadow-soft transition-all text-gray-800 dark:text-gray-200"
+                        className="flex-1 text-left p-3 bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-700 rounded-xl hover:shadow-soft hover:-translate-y-1 active:translate-y-0 transition-all text-gray-800 dark:text-gray-200"
                       >
                         <span className="font-medium">{question}</span>
                       </button>
                       <button 
                         onClick={() => toggleFavoriteQuestion(question)}
-                        className="ml-2 p-2 text-yellow-500"
+                        className="ml-2 p-2 text-babypink"
                       >
-                        <BsStars className="text-lg" />
+                        <FiHeart className="text-lg" />
                       </button>
                     </div>
                   ))}
@@ -541,32 +552,34 @@ const AIAssistant: React.FC = () => {
               </div>
             )}
             
-            <div className="space-y-6">
-              {suggestedQuestionCategories.map((category, catIndex) => (
-                <div key={catIndex} className="animate-fade-in-up" style={{animationDelay: `${catIndex * 0.1}s`}}>
-                  <h3 className="text-md font-display font-bold mb-3 flex items-center text-gray-700 dark:text-gray-200">
-                    <span className={`w-6 h-6 rounded-full ${category.color} flex items-center justify-center mr-2`}>
-                      {category.icon}
-                    </span>
-                    {category.title}
-                  </h3>
-                  <div className="space-y-2">
-                    {category.questions.map((question, qIndex) => (
-                      <div key={`cat-${catIndex}-q-${qIndex}`} className="flex items-center">
-                        <button
-                          onClick={() => handleSuggestedQuestion(question)}
-                          className="flex-1 text-left p-3 bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-700 rounded-xl hover:shadow-elevated hover:-translate-y-1 active:translate-y-0 shadow-soft transition-all text-gray-800 dark:text-gray-200"
-                        >
-                          <span className="font-medium">{question}</span>
-                        </button>
-                        <button 
-                          onClick={() => toggleFavoriteQuestion(question)}
-                          className={`ml-2 p-2 ${isFavorite(question) ? 'text-yellow-500' : 'text-gray-300 dark:text-gray-600'}`}
-                        >
-                          <BsStars className="text-lg" />
-                        </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {suggestedQuestionCategories.map((category, index) => (
+                <div key={index} className="relative overflow-hidden">
+                  <div className={`p-4 bg-${category.color === 'gradient-purple' ? 'lavender' : category.color === 'gradient-mint' ? 'teal' : category.color === 'gradient-blue' ? 'blue' : 'pink'}-50 dark:bg-gray-700 rounded-2xl hover:shadow-soft transition-all group`}>
+                    <h3 className={`text-md font-display font-bold mb-3 flex items-center text-${category.color === 'gradient-purple' ? 'lavender' : category.color === 'gradient-mint' ? 'teal' : category.color === 'gradient-blue' ? 'blue' : 'pink'}-500 dark:text-${category.color === 'gradient-purple' ? 'lavender' : category.color === 'gradient-mint' ? 'teal' : category.color === 'gradient-blue' ? 'blue' : 'pink'}-300`}>
+                      <div className={`w-8 h-8 rounded-lg bg-gradient-to-r from-${category.color === 'gradient-purple' ? 'lavender' : category.color === 'gradient-mint' ? 'teal' : category.color === 'gradient-blue' ? 'blue' : 'pink'}-400 to-${category.color === 'gradient-purple' ? 'lavender' : category.color === 'gradient-mint' ? 'teal' : category.color === 'gradient-blue' ? 'blue' : 'pink'}-500 flex items-center justify-center mr-2 shadow-soft`}>
+                        {category.icon}
                       </div>
-                    ))}
+                      {category.title}
+                    </h3>
+                    <div className="space-y-2">
+                      {category.questions.map((question, qIndex) => (
+                        <div key={`${index}-${qIndex}`} className="flex items-center">
+                          <button
+                            onClick={() => handleSuggestedQuestion(question)}
+                            className={`flex-1 text-left p-3 bg-white dark:bg-gray-800 rounded-xl hover:shadow-soft hover:-translate-y-1 active:translate-y-0 transition-all text-gray-800 dark:text-gray-200 border border-${category.color === 'gradient-purple' ? 'lavender' : category.color === 'gradient-mint' ? 'teal' : category.color === 'gradient-blue' ? 'blue' : 'pink'}-100 dark:border-gray-700`}
+                          >
+                            <span className="font-medium">{question}</span>
+                          </button>
+                          <button 
+                            onClick={() => toggleFavoriteQuestion(question)}
+                            className={`ml-2 p-2 text-${isFavorite(question) ? 'babypink' : 'gray-400 hover:text-babypink'} transition-colors`}
+                          >
+                            <FiHeart className={`text-lg ${isFavorite(question) ? 'fill-current' : ''}`} />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -575,79 +588,81 @@ const AIAssistant: React.FC = () => {
         )}
 
         {activeTab === 'settings' && (
-          <div className="p-5 animate-fade-in-up">
-            <h2 className="text-xl font-display font-bold mb-5 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">AI Settings</h2>
+          <div className="p-4 animate-fade-in-up bg-white bg-opacity-70 dark:bg-gray-800 dark:bg-opacity-50 backdrop-blur-sm rounded-3xl shadow-soft">
+            <h2 className="text-xl font-display font-bold mb-5 bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">AI Assistant Settings</h2>
             
-            {showSettingsSuccess && (
-              <div className="mb-5 p-4 bg-mintgreen-light dark:bg-green-800 text-green-800 dark:text-green-100 rounded-xl shadow-glow animate-fade-in-up flex items-center">
-                <BsStars className="text-xl mr-2 text-green-600 dark:text-green-300 animate-pulse-gentle" />
-                <span className="font-medium">Settings saved successfully!</span>
-              </div>
-            )}
-            
-            <div className="space-y-5">
-              {aiProviders.map((provider, index) => (
-                <div 
-                  key={provider.id} 
-                  className="bg-white dark:bg-dark-card p-5 rounded-xl border border-gray-100 dark:border-gray-700 shadow-soft hover:shadow-elevated transition-all animate-fade-in-up"
-                  style={{animationDelay: `${index * 0.1}s`}}
-                >
+            <div className="space-y-6">
+              {aiProviders.map(provider => (
+                <div key={provider.id} className="bg-white dark:bg-gray-700 p-4 rounded-2xl border border-gray-100 dark:border-gray-600 shadow-soft">
                   <div className="flex items-center mb-3">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-3 ${provider.id === 'openai' ? 'gradient-green shadow-glow-sm' : 'gradient-blue shadow-glow-sm'}`}>
-                      <span className="text-white text-lg">{provider.icon}</span>
+                    <div className={`w-10 h-10 rounded-xl ${provider.id === 'openai' ? 'bg-gradient-to-r from-green-400 to-emerald-600' : 'bg-gradient-to-r from-blue-400 to-indigo-600'} flex items-center justify-center mr-3 shadow-soft`}>
+                      {provider.icon}
                     </div>
-                    <h3 className="font-display font-bold text-lg bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">{provider.name}</h3>
+                    <div>
+                      <h3 className="font-bold text-gray-800 dark:text-white">{provider.name}</h3>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        {provider.requiresKey 
+                          ? hasApiKey(provider.id) 
+                            ? "API key configured" 
+                            : "Requires API key" 
+                          : "No API key required"}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 font-rounded">
-                    {provider.id === 'openai' 
-                      ? 'Powered by ChatGPT, ideal for detailed development advice and milestone tracking.' 
-                      : 'Google\'s Gemini AI provides research-backed guidance on parenting and child development.'}
-                  </p>
-                  <div>
-                    <label htmlFor={`${provider.id}-key`} className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  
+                  <div className="mb-4">
+                    <label htmlFor={`${provider.id}_api_key`} className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       API Key
                     </label>
                     <div className="flex">
                       <input
                         type="password"
-                        id={`${provider.id}-key`}
+                        id={`${provider.id}_api_key`}
                         value={apiKey[provider.id as keyof typeof apiKey] || ''}
-                        onChange={(e) => setApiKey(prev => ({ ...prev, [provider.id]: e.target.value }))}
+                        onChange={(e) => setApiKey({...apiKey, [provider.id]: e.target.value})}
                         placeholder={`Enter your ${provider.name} API key`}
-                        className="flex-1 p-3 border border-gray-200 dark:border-gray-600 rounded-l-xl bg-white dark:bg-gray-800 text-gray-800 dark:text-white shadow-pressed focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                        className="flex-1 p-3 rounded-l-xl border border-gray-300 dark:border-gray-600 dark:bg-gray-800 text-gray-800 dark:text-white text-sm focus:ring-2 focus:ring-lavender dark:focus:ring-babypink focus:outline-none"
                       />
-                      <button 
+                      <button
                         onClick={() => {
-                          const input = document.getElementById(`${provider.id}-key`) as HTMLInputElement;
-                          input.type = input.type === 'password' ? 'text' : 'password';
+                          const inputField = document.getElementById(`${provider.id}_api_key`) as HTMLInputElement;
+                          if (inputField.type === 'password') {
+                            inputField.type = 'text';
+                          } else {
+                            inputField.type = 'password';
+                          }
                         }}
-                        className="px-4 bg-gray-50 dark:bg-gray-700 border border-l-0 border-gray-200 dark:border-gray-600 rounded-r-xl hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+                        className="px-3 py-3 bg-gray-100 dark:bg-gray-700 border-y border-r border-gray-300 dark:border-gray-600 rounded-r-xl text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600"
                       >
-                        👁️
+                        <FiStar className="text-base" />
                       </button>
                     </div>
-                    <p className="mt-2 text-xs text-gray-500 dark:text-gray-400 font-medium">
-                      {hasApiKey(provider.id) 
-                        ? '✓ API key is saved' 
-                        : 'No API key saved'}
+                    <p className="text-xs text-gray-500 mt-1">
+                      {provider.id === 'openai' 
+                        ? "Available at https://platform.openai.com/account/api-keys" 
+                        : "Available at https://makersuite.google.com/app/apikey"}
                     </p>
                   </div>
                 </div>
               ))}
-              
+            </div>
+            
+            <div className="mt-6 flex justify-end">
               <button
                 onClick={saveAPIKeys}
-                className="mt-5 w-full py-3 bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-primary text-white rounded-xl shadow-soft hover:shadow-glow transition-all transform hover:-translate-y-1 active:translate-y-0 font-medium"
+                className="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-white font-medium shadow-soft hover:shadow-glow hover:-translate-y-1 active:translate-y-0 transition-all flex items-center"
               >
+                <FiSettings className="mr-2" />
                 Save Settings
               </button>
-              
-              <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700">
-                <p className="text-sm text-gray-600 dark:text-gray-300 font-rounded">
-                  <span className="font-medium">Privacy Note:</span> Your API keys are stored locally in your browser and never sent to our servers. 
-                </p>
-              </div>
             </div>
+            
+            {showSettingsSuccess && (
+              <div className="mt-4 p-3 bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-xl text-green-800 dark:text-green-200 flex items-center animate-fade-in">
+                <BsCloudSun className="text-green-500 mr-2" />
+                <span>Settings saved successfully!</span>
+              </div>
+            )}
           </div>
         )}
       </div>
