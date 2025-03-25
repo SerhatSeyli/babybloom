@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soft gradient background circle with transparent inner part -->
+  <circle cx="256" cy="256" r="256" fill="url(#paint0_radial)"/>
+  
+  <!-- Flower petals around baby's head - with better depth -->
+  <g opacity="0.9">
+    <!-- Top petal -->
+    <path d="M256 116C276 76 325 96 325 136" fill="#FFD6E8"/>
+    <!-- Top-right petal -->
+    <path d="M325 136C365 96 415 136 375 176" fill="#FFD6E8"/>
+    <!-- Right petal -->
+    <path d="M375 176C425 196 405 256 355 236" fill="#FFD6E8"/>
+    <!-- Bottom-right petal -->
+    <path d="M355 236C405 276 375 326 335 296" fill="#FFD6E8"/>
+    <!-- Bottom petal -->
+    <path d="M335 296C355 346 295 356 275 306" fill="#FFD6E8"/>
+    <!-- Bottom-left petal -->
+    <path d="M275 306C245 356 195 336 215 286" fill="#FFD6E8"/>
+    <!-- Left petal -->
+    <path d="M215 286C165 316 145 256 195 236" fill="#FFD6E8"/>
+    <!-- Top-left petal -->
+    <path d="M195 236C145 206 165 146 215 176" fill="#FFD6E8"/>
+    <!-- Connect to top petal -->
+    <path d="M215 176C175 136 225 76 256 116" fill="#FFD6E8"/>
+  </g>
+  
+  <!-- Subtle glow effect - with transparency -->
+  <circle cx="256" cy="256" r="200" fill="white" fill-opacity="0.05"/>
+  
+  <!-- NO SOLID BACKGROUND - removed the white background circle completely -->
+  
+  <!-- Baby face features only (no background face circle) -->
+  <!-- Rosy cheeks - softer and cuter -->
+  <circle cx="196" cy="270" r="28" fill="#FF9EB5" fill-opacity="0.7"/>
+  <circle cx="316" cy="270" r="28" fill="#FF9EB5" fill-opacity="0.7"/>
+  
+  <!-- Eyes - rounder and more kawaii style -->
+  <g>
+    <!-- Left eye -->
+    <path d="M206 236C206 226 186 226 186 236" stroke="#654C45" stroke-width="8" stroke-linecap="round"/>
+    <!-- Right eye -->
+    <path d="M326 236C326 226 306 226 306 236" stroke="#654C45" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Smiling mouth - cuter with dimples -->
+  <path d="M216 300C236 330 276 330 296 300" stroke="#654C45" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="216" cy="300" r="4" fill="#654C45"/>
+  <circle cx="296" cy="300" r="4" fill="#654C45"/>
+  
+  <!-- Improved baby onesie collar with better design -->
+  <path d="M180 370C200 410 310 410 330 370C335 350 335 335 320 350C296 370 216 370 190 350C175 335 175 350 180 370Z" fill="url(#collar_gradient)"/>
+  
+  <!-- Baby onesie pattern details -->
+  <path d="M210 370L210 385" stroke="#97C4FF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M230 370L230 390" stroke="#97C4FF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M256 370L256 395" stroke="#97C4FF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M280 370L280 390" stroke="#97C4FF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M300 370L300 385" stroke="#97C4FF" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Baby onesie top button - improved -->
+  <circle cx="256" cy="360" r="10" fill="#4F8FE8"/>
+  <circle cx="256" cy="360" r="6" fill="#D7E9FF"/>
+  <circle cx="253" cy="357" r="2" fill="white"/>
+  
+  <!-- Small decorative elements - subtle glow -->
+  <circle cx="406" cy="406" r="15" fill="#FDCBE2" fill-opacity="0.9"/>
+  <circle cx="106" cy="106" r="15" fill="#FDCBE2" fill-opacity="0.9"/>
+  <circle cx="406" cy="106" r="15" fill="#FDCBE2" fill-opacity="0.9"/>
+  <circle cx="106" cy="406" r="15" fill="#FDCBE2" fill-opacity="0.9"/>
+  
+  <!-- Subtle decoration around flowers -->
+  <circle cx="256" cy="116" r="6" fill="white" fill-opacity="0.6"/>
+  <circle cx="375" cy="176" r="6" fill="white" fill-opacity="0.6"/>
+  <circle cx="335" cy="296" r="6" fill="white" fill-opacity="0.6"/>
+  <circle cx="195" cy="236" r="6" fill="white" fill-opacity="0.6"/>
+  
+  <!-- Gradients and other defs -->
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 256) rotate(90) scale(256)">
+      <stop offset="0" stop-color="#E0D3FF"/>
+      <stop offset="0.7" stop-color="#D1BDFF"/>
+      <stop offset="1" stop-color="#C7ADFF"/>
+    </radialGradient>
+    
+    <!-- Improved collar gradient with more vibrant blues -->
+    <linearGradient id="collar_gradient" x1="256" y1="335" x2="256" y2="410" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B2D6FF"/>
+      <stop offset="1" stop-color="#7BADFF"/>
+    </linearGradient>
+  </defs>
+</svg>

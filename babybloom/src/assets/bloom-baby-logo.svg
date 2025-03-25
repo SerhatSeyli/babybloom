@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soft gradient background circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#paint0_radial)"/>
+  
+  <!-- Baby face -->
+  <circle cx="256" cy="230" r="140" fill="#FFE6D5"/>
+  
+  <!-- Flower petals around baby's head -->
+  <path d="M256 90C276 50 320 70 320 110C360 70 410 110 370 150C420 170 400 230 350 210C400 250 370 300 330 270C350 320 290 330 270 280C240 330 190 310 210 260C160 290 140 230 190 210C140 180 160 120 210 150C170 110 210 50 256 90Z" fill="#FDCBE2"/>
+  
+  <!-- Cheeks -->
+  <circle cx="196" cy="250" r="25" fill="#FFB6C1" fill-opacity="0.7"/>
+  <circle cx="316" cy="250" r="25" fill="#FFB6C1" fill-opacity="0.7"/>
+  
+  <!-- Eyes (closed and smiling) -->
+  <path d="M186 220C196 210 216 215 226 225" stroke="#7B5D52" stroke-width="8" stroke-linecap="round"/>
+  <path d="M286 220C296 210 316 215 326 225" stroke="#7B5D52" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Smiling mouth -->
+  <path d="M216 280C236 310 276 310 296 280" stroke="#7B5D52" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Baby onesie collar -->
+  <path d="M176 350C196 380 316 380 336 350C346 300 326 320 316 330C296 340 216 340 196 330C186 320 166 300 176 350Z" fill="#CEE5FF"/>
+  
+  <!-- Baby onesie top button -->
+  <circle cx="256" cy="340" r="10" fill="#97C4FF"/>
+  
+  <!-- Small decorative elements -->
+  <circle cx="406" cy="406" r="15" fill="#FDCBE2"/>
+  <circle cx="106" cy="106" r="15" fill="#FDCBE2"/>
+  <circle cx="406" cy="106" r="15" fill="#FDCBE2"/>
+  <circle cx="106" cy="406" r="15" fill="#FDCBE2"/>
+  
+  <!-- Radial gradient definition -->
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 256) rotate(90) scale(256)">
+      <stop offset="0" stop-color="#E8D9FF"/>
+      <stop offset="1" stop-color="#C7ADFF"/>
+    </radialGradient>
+  </defs>
+</svg>

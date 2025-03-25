@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Purple background circle -->
+  <circle cx="256" cy="256" r="256" fill="#A573E2"/>
+  <circle cx="256" cy="256" r="256" fill="url(#paint0_linear)" fill-opacity="0.4"/>
+  
+  <!-- Mobile hanger top circle -->
+  <circle cx="256" cy="80" r="30" fill="white"/>
+  <circle cx="256" cy="80" r="15" fill="#A573E2"/>
+  
+  <!-- Mobile center rod -->
+  <rect x="253" y="80" width="6" height="220" fill="#FFFFFF"/>
+  <rect x="253" y="80" width="6" height="220" fill="#59ECD6" fill-opacity="0.5"/>
+  
+  <!-- Mobile cross bar -->
+  <rect x="103" y="140" width="306" height="20" fill="white"/>
+  <rect x="103" y="140" width="306" height="20" fill="#EAEEFF" fill-opacity="0.9"/>
+  
+  <!-- Left star -->
+  <path d="M128 220L143 190L113 190L128 160L143 190L173 190L143 190L128 220Z" fill="#FFC125"/>
+  <path d="M113 190L128 160L143 190L173 190L143 190L128 220L113 190Z" fill="#FFAA00"/>
+  
+  <!-- Right star -->
+  <path d="M384 220L399 190L369 190L384 160L399 190L429 190L399 190L384 220Z" fill="#FFC125"/>
+  <path d="M369 190L384 160L399 190L429 190L399 190L384 220L369 190Z" fill="#FFAA00"/>
+  
+  <!-- Heart -->
+  <path d="M256 290L216 240C196 220 216 180 256 220C296 180 316 220 296 240L256 290Z" fill="#FFA5BA"/>
+  <path d="M256 290L296 240C316 220 296 180 256 220V290Z" fill="#FF8CAD"/>
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A573E2" stop-opacity="0"/>
+      <stop offset="1" stop-color="#7834D8"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soft gradient background circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#paint0_radial)"/>
+  
+  <!-- Baby face - centered -->
+  <circle cx="256" cy="256" r="140" fill="#FFE6D5"/>
+  
+  <!-- Flower petals around baby's head - evenly spaced and centered -->
+  <g transform="translate(0, 20)">
+    <!-- Top petal -->
+    <path d="M256 116C276 76 325 96 325 136" fill="#FDCBE2"/>
+    <!-- Top-right petal -->
+    <path d="M325 136C365 96 415 136 375 176" fill="#FDCBE2"/>
+    <!-- Right petal -->
+    <path d="M375 176C425 196 405 256 355 236" fill="#FDCBE2"/>
+    <!-- Bottom-right petal -->
+    <path d="M355 236C405 276 375 326 335 296" fill="#FDCBE2"/>
+    <!-- Bottom petal -->
+    <path d="M335 296C355 346 295 356 275 306" fill="#FDCBE2"/>
+    <!-- Bottom-left petal -->
+    <path d="M275 306C245 356 195 336 215 286" fill="#FDCBE2"/>
+    <!-- Left petal -->
+    <path d="M215 286C165 316 145 256 195 236" fill="#FDCBE2"/>
+    <!-- Top-left petal -->
+    <path d="M195 236C145 206 165 146 215 176" fill="#FDCBE2"/>
+    <!-- Connect to top petal -->
+    <path d="M215 176C175 136 225 76 256 116" fill="#FDCBE2"/>
+  </g>
+  
+  <!-- Cheeks - slightly lower and more pronounced -->
+  <circle cx="196" cy="276" r="28" fill="#FFB6C1" fill-opacity="0.6"/>
+  <circle cx="316" cy="276" r="28" fill="#FFB6C1" fill-opacity="0.6"/>
+  
+  <!-- Eyes - curved and expressive -->
+  <path d="M186 236C196 226 216 231 226 241" stroke="#7B5D52" stroke-width="10" stroke-linecap="round"/>
+  <path d="M286 236C296 226 316 231 326 241" stroke="#7B5D52" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Smiling mouth - wider and more expressive -->
+  <path d="M216 306C236 341 276 341 296 306" stroke="#7B5D52" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Baby onesie collar - better proportioned -->
+  <path d="M176 376C196 406 316 406 336 376C346 326 326 346 316 356C296 366 216 366 196 356C186 346 166 326 176 376Z" fill="#CEE5FF"/>
+  
+  <!-- Baby onesie top button -->
+  <circle cx="256" cy="366" r="10" fill="#97C4FF"/>
+  
+  <!-- Small decorative elements - more balanced -->
+  <circle cx="406" cy="406" r="20" fill="#FDCBE2" fill-opacity="0.8"/>
+  <circle cx="106" cy="106" r="20" fill="#FDCBE2" fill-opacity="0.8"/>
+  <circle cx="406" cy="106" r="20" fill="#FDCBE2" fill-opacity="0.8"/>
+  <circle cx="106" cy="406" r="20" fill="#FDCBE2" fill-opacity="0.8"/>
+  
+  <!-- Radial gradient definition - softer colors -->
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 256) rotate(90) scale(256)">
+      <stop offset="0" stop-color="#E8D9FF"/>
+      <stop offset="0.6" stop-color="#D1BDFF"/>
+      <stop offset="1" stop-color="#C7ADFF"/>
+    </radialGradient>
+  </defs>
+</svg>

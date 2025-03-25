@@ -1,0 +1,28 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Baby face -->
+  <path d="M347.6855 189.6855C347.6855 265.4235 286.1665 326.9425 210.4285 326.9425C134.6905 326.9425 73.1715 265.4235 73.1715 189.6855C73.1715 113.9475 134.6905 52.4285 210.4285 52.4285C286.1665 52.4285 347.6855 113.9475 347.6855 189.6855Z" fill="#F3D8BD"/>
+  <!-- Baby ear -->
+  <path d="M81.7856 155.4285C81.7856 194.5305 49.8876 226.4285 10.7856 226.4285C10.7856 226.4285 10.7856 155.4285 10.7856 155.4285C10.7856 116.3265 42.6836 84.4285 81.7856 84.4285C81.7856 84.4285 81.7856 155.4285 81.7856 155.4285Z" fill="#E3CAB1"/>
+  <!-- Baby hair tuft -->
+  <path d="M262.7854 80.4287C282.7854 47.4287 340.7854 56.4287 350.7854 90.4287L370.7854 80.4287L355.7854 57.4287L262.7854 80.4287Z" fill="#606060"/>
+  <!-- Baby blanket -->
+  <path d="M230.728 175.643L70.728 325.643C84.728 378.643 127.728 454.643 220.728 481.643L365.728 336.643L230.728 175.643Z" fill="#7EAED9"/>
+  <path d="M365.728 336.643L220.728 481.643C290.728 501.643 365.728 454.643 380.728 404.643L380.728 306.643L365.728 336.643Z" fill="#2E5D87"/>
+  <!-- Baby blanket pattern -->
+  <path d="M180 280L168 292" stroke="#5C94C8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M210 310L198 322" stroke="#5C94C8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M240 340L228 352" stroke="#5C94C8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M270 370L258 382" stroke="#5C94C8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M300 400L288 412" stroke="#5C94C8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M120 220L108 232" stroke="#5C94C8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M150 250L138 262" stroke="#5C94C8" stroke-width="8" stroke-linecap="round"/>
+  <!-- Darker blanket layer -->
+  <path d="M265 230L180 318C197 370 240 440 330 450L450 320L265 230Z" fill="#89B8E3" fill-opacity="0.5"/>
+  <!-- Baby cheeks -->
+  <circle cx="150" cy="190" r="25" fill="#F2A191"/>
+  <circle cx="270" cy="190" r="25" fill="#F2A191"/>
+  <!-- Baby eyes and mouth -->
+  <path d="M150 150C170 120 180 150 170 160" stroke="#333333" stroke-width="10" stroke-linecap="round"/>
+  <path d="M270 150C290 120 300 150 290 160" stroke="#333333" stroke-width="10" stroke-linecap="round"/>
+  <path d="M220 200C240 230 270 200 260 190" stroke="#333333" stroke-width="10" stroke-linecap="round"/>
+</svg>

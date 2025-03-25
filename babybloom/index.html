@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BabyBloom</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        display: block;
+        overflow-x: hidden;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+      }
+      /* Fix for floating icons */
+      svg {
+        display: inline-block;
+        vertical-align: middle;
+        overflow: hidden;
+      }
+      /* Hide any SVG elements directly in the body but outside #root */
+      body > svg {
+        display: none !important;
+      }
+      /* Hide any orphaned elements that might be the floating icons */
+      body > div:not(#root) svg {
+        display: none !important;
+      }
+      /* Target the specific icons we can see floating on the left side */
+      body > svg[data-icon="activity"],
+      body > svg[data-icon="heart-pulse-fill"],
+      body > svg[data-icon="calendar-event"],
+      body > svg[data-icon="calendar2-heart"],
+      body > svg[data-icon="robot"],
+      body > svg[data-icon="home-fill"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

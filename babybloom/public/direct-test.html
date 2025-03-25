@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BabyBloom Direct Test</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #8B5CF6;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>BabyBloom</h1>
+    <p>This is a direct HTML test. If you can see this, the web server is working correctly.</p>
+    
+    <script>
+      console.log("Direct HTML test loaded successfully!");
+      // Display any JavaScript errors that occur
+      window.addEventListener('error', function(event) {
+        const errorDiv = document.createElement('div');
+        errorDiv.style.color = 'red';
+        errorDiv.style.marginTop = '20px';
+        errorDiv.style.padding = '10px';
+        errorDiv.style.border = '1px solid red';
+        errorDiv.innerHTML = `<strong>Error:</strong> ${event.message}<br><strong>Source:</strong> ${event.filename}<br><strong>Line:</strong> ${event.lineno}`;
+        document.body.appendChild(errorDiv);
+      });
+    </script>
+  </div>
+</body>
+</html>

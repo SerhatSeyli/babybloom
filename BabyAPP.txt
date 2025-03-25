@@ -1,0 +1,217 @@
+Overview
+
+BabyBloom is a comprehensive baby monitoring and parenting app designed to assist parents in tracking their child’s development, health, and special moments. The app integrates with the Baby Buddy API to store and retrieve baby-related data efficiently. Users can manually log significant events, upload images/videos, and receive age-based parenting tips. Additionally, BabyBloom will feature AI assistance via ChatGPT or Google Gemini, allowing parents to interact with an intelligent assistant for parenting guidance.
+
+Key Features
+
+1. Multi-Baby Support
+
+Users can register multiple babies/children within the app.
+
+Each baby will have a unique profile containing:
+
+Full Name (editable at any time)
+
+Date of Birth (used to calculate age dynamically)
+
+Current Age (displayed in months and years)
+
+Profile Picture (users can upload and change images)
+
+Custom Notes Section (parents can add general notes per child)
+
+2. Manual Entry for Events & Milestones
+
+Parents can log various events and milestones related to their baby’s growth.
+
+Categories of manual entry:
+
+Doctor Appointments (date, time, location, doctor’s name, purpose, and additional notes)
+
+Vaccination Records (vaccine name, date administered, next scheduled dose, reaction notes)
+
+Monthly Milestones (auto-generated options for major ages: 1 month, 2 months, etc.)
+
+Health Events (sickness, fever, symptoms, temperature readings, medication administered, doctor’s recommendations)
+
+First-Time Events (baby’s first smile, first steps, first words, first tooth, etc.)
+
+Custom Events (users can define their own event categories)
+
+Each event will include:
+
+Title & Description (for context and details)
+
+Date & Time Stamp (automatic and manually adjustable)
+
+Category Tagging (to allow filtering by event type)
+
+Image/Video Uploads (optional but encouraged for memories)
+
+Recurring Event Reminders (for vaccinations, doctor follow-ups, etc.)
+
+3. Age-Based Parenting Facts & Tips
+
+The app will provide monthly insights based on the baby’s current age.
+
+Topics covered include:
+
+Growth expectations and developmental milestones
+
+Sleep patterns and suggested routines
+
+Feeding recommendations (breastfeeding, formula, solids introduction, etc.)
+
+Common health concerns and when to see a doctor
+
+Playtime ideas for cognitive and motor skill development
+
+Safety tips based on age (babyproofing recommendations, choking hazards, etc.)
+
+Personalized AI Insights:
+
+AI will generate parenting tips based on baby’s data.
+
+Parents can ask the AI assistant for additional advice.
+
+4. Image & Video Uploads
+
+Parents can upload and organize:
+
+Special moments (first words, first walk, birthdays, etc.)
+
+Medical records (optional for easy reference)
+
+Playtime activities
+
+Daily life snapshots
+
+Storage & Management:
+
+Images and videos will be stored securely.
+
+Users can organize content by date, event type, or custom tags.
+
+5. Shareable Moments
+
+Parents can share baby updates via:
+
+Private links (generated for selected events)
+
+Family & Friends Group Access (controlled sharing with specific users)
+
+Social Media Sharing (optional, customizable privacy settings)
+
+Privacy Settings for Each Post:
+
+Private (only visible to the user)
+
+Family-only (visible to added family members)
+
+Public (visible to all users or on social media)
+
+6. Modern UI with Effects & Animations
+
+User Interface Features:
+
+Clean, interactive design with smooth animations
+
+Light & Dark mode toggle
+
+Intuitive navigation with a simple dashboard
+
+Interactive timeline view for baby’s history
+
+Animations & Effects:
+
+Animated transitions between sections
+
+Highlighted alerts for upcoming milestones
+
+Playful icons and color-coded categories
+
+7. History Log & Timeline
+
+A chronological view of all logged events:
+
+Scrollable timeline with filters
+
+Quick search functionality
+
+Category-based sorting (medical, milestones, personal moments)
+
+Exportable Logs:
+
+Parents can generate a PDF report of baby’s history for doctors or personal records.
+
+8. AI Assistant Integration (ChatGPT & Google Gemini)
+
+AI assistant integration allows:
+
+Real-time parenting advice
+
+Answering baby-related questions (sleep routines, feeding, etc.)
+
+Milestone predictions based on baby’s history
+
+Generating reminders for doctor visits and vaccinations
+
+AI Service Selection:
+
+Users can choose between ChatGPT and Google Gemini
+
+Option to log in using their personal AI service accounts
+
+Additional Features
+
+Push Notifications:
+
+Reminders for doctor appointments & vaccinations
+
+Alerts for upcoming milestones and developmental changes
+
+Export & Backup:
+
+Users can export baby’s history as a detailed PDF report
+
+Secure cloud backup for storing baby’s data
+
+Baby Growth Charts:
+
+Track baby’s weight, height, and head circumference over time
+
+Sleep & Feeding Tracker (Optional Future Feature):
+
+Record sleep duration and patterns
+
+Log breastfeeding/formula feeding schedules
+
+Technical Requirements
+
+Backend: Baby Buddy API integration for data handling https://docs.baby-buddy.net/api/?utm_source=chatgpt.com
+
+Frontend: Modern UI with animations (React/Tailwind recommended)
+
+Authentication: Secure login system (email-based or social login)
+
+Cloud Storage: Secure storage for image & video uploads
+
+AI API Integration: ChatGPT & Google Gemini authentication
+
+Hosting: Deployable on Windsurf
+
+Next Steps
+
+Project Setup - Initialize project in Windsurf and define data models.
+
+Backend Integration - Connect Baby Buddy API for storing/retrieving baby data.
+
+Frontend Development - Design UI components, animations, and navigation.
+
+AI Assistant Implementation - Set up AI selection and authentication.
+
+Media Upload & Sharing - Implement image/video storage & sharing features.
+
+Testing & Optimization - Ensure smooth performance and user experience.
+
+Deployment on Windsurf - Final testing and launch preparation.
